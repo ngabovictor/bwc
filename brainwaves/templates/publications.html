@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title%}
+
+Welcome to Brain Waves Company
+
+{% endblock %}
+
+{% load staticfiles %}
+
+{% block body %}
+
+<div class="contents">
+	
+	<div class="container">
+		<div class="col-lg-12">
+			<div class="portfolios">
+
+
+				{% for pub in publications %}
+				
+					<a href="{{pub.image.url}}" class="flipLightBox">
+					<img src="{{pub.image.url}}" width="225" height="225" alt="Image 1" />
+					<span><b>{{pub.title}}, By {{pub.author}}</b> {{pub.caption}}</span>
+					</a>
+
+				{% endfor %}
+
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+	<hr>
+	<!--start footer-->
+{% endblock %}
+
+{% block scripts %}
+
+<script type="text/javascript" src="{% static 'js/fliplightbox.min.js' %}"></script>
+
+<script type="text/javascript">$('body').flipLightBox()</script>
+
+{% endblock %}

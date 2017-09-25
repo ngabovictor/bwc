@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title%}
+
+What we do
+
+{% endblock %}
+
+{% load staticfiles %}
+
+{% block body %}
+
+<div class="contents">
+	<div class="feature">
+		
+	{% for cat in work_categories %}
+
+		<div class="breadcrumbs">
+			<h4>{{cat.title}}</h4>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+
+			{% for work in works %}
+
+				<!-- {% if work.category == cat.title %} -->
+
+					<div class="col-md-3">
+						<img src="{{work.image.url}}" class="img-responsive"alt="" />
+						<p>{{work.caption}}
+						</p>
+					</div>
+
+				<!-- {% endif %} -->
+
+			{% endfor %}
+
+			</div>		
+		</div>
+
+	{% endfor %}
+		
+		
+	</div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

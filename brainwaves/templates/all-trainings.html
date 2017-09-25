@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+
+    {% load staticfiles %}
+
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/responsive-slider.css' %}" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'css/main.css' %}" rel="stylesheet">
+	</head>
+
+<body>
+	
+
+
+	{% for training in trainings %}
+
+	<div class="panel-body">
+		<div class="media">
+			<a class="media-left" href="#">
+				<img src="{{training.image.url}}" alt="">
+			</a>
+			<br>
+			<div class="media-body">
+				<h4 class="media-heading">{{training.title}}</h4>
+				<p>{{training.caption}}
+				</p>
+				<div class="ficon">
+					<a href="" alt="">Learn more</a> 
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% endfor %}
+
+
+
+</body>
+</html>

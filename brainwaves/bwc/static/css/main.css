@@ -1,0 +1,64 @@
+/*NavBar*/
+
+#navigation
+{
+	height: 120px;
+	border-bottom: 1px rgba(0, 0, 0, 0.5) solid;
+	background-color: white;
+}
+
+.nav
+{
+	margin-top: 60px;
+}
+
+#logo_main
+{
+	margin-top: -20px;
+}
+
+.icon-bar
+{
+	background-color: #0851ff;
+}
+
+.navbar-toggle
+{
+	margin-top: 50px;
+}
+
+
+
+/*CONTENT*/
+
+.contents
+{
+	margin-top: 140px;
+}
+
+
+#flb-close
+{
+	margin-top: 130px !important;
+}
+
+/*MORE*/
+
+.green-text
+{
+	color: rgba(0, 0, 0, 0.7);
+}
+
+
+
+/*RESPONSIVE*/
+
+@media screen and (max-width:768px){
+	
+	.navigation
+	{
+		background-color: rgba(255, 255, 255, 1);
+		margin-top: 25px;
+		border-bottom: 1px dashed rgba(0, 0, 0, 1);
+	}
+}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title%}
+
+Welcome to Brain Waves Company
+
+{% endblock %}
+
+{% load staticfiles %}
+
+{% block body %}
+	
+	<!-- Responsive slider - START -->
+	
+	<!-- Responsive slider - START -->
+<div class="contents">
+	
+	<div class="container">
+
+		<p align="center" class="green-text">We're glad you are about to join us. We love partners.</p>
+		<p align="center" class="green-text">Together we can do more!</p>
+
+
+		<div class="col-lg-6">
+			<div class="map">
+				<iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Kuningan,+Jakarta+Capital+Region,+Indonesia&amp;aq=3&amp;oq=kuningan+&amp;sll=37.0625,-95.677068&amp;sspn=37.410045,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Kuningan&amp;t=m&amp;z=14&amp;ll=-6.238824,106.830177&amp;output=embed">
+				</iframe>
+			</div>
+		</div>
+
+		
+
+		<p align="center" class="green-text">Please let us know you well.</p>
+
+		<div class="col-lg-6">
+			<form class="form-horizontal" role="form">
+
+				<div class="form-group">
+					<label for="inputPassword3" class="col-sm-2 control-label">Name</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="inputPassword3" placeholder="Name">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+					<div class="col-sm-10">
+					  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-2 control-label">Phone</label>
+					<div class="col-sm-10">
+					  <input type="tel" class="form-control" id="inputEmail3" placeholder="Phone">
+					</div>
+				</div>
+					
+				<div class="form-group">
+					<label for="inputPassword3" class="col-sm-2 control-label">Note</label>
+					<div class="col-sm-10">
+						<textarea class="form-control" rows="8"></textarea>	
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+					  <button type="submit" class="btn btn-default">Join us</button>
+					</div>
+				</div>
+			</form>	
+		</div>
+	</div>	
+	
+	<hr>
+</div>
+	
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

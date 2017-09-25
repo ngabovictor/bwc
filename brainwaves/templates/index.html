@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+
+{% block title%}
+
+Welcome to Brain Waves Company
+
+{% endblock %}
+
+{% load staticfiles %}
+
+{% block body %}
+	
+	<!-- Responsive slider - START -->
+<div class="contents">
+
+	<div class="slider">
+		<div class="">
+			<div class="">
+				<div class="responsive-slider" data-spy="responsive-slider" data-autoplay="true">
+					<div class="slides" data-group="slides">						
+						<ul>
+
+							{% for item in carousel %}
+
+							<li>
+								<div class="slide-body" data-group="slide">
+									<img src="{{item.image.url}}" alt="" class="img-responsive" >
+								</div>					
+							</li>
+
+							{% endfor %}
+					
+						</ul>
+					</div>			   
+					<a class="slider-control left" href="#" data-jump="prev"><i class="fa fa-angle-left fa-2x"></i></a>
+					<a class="slider-control right" href="#" data-jump="next"><i class="fa fa-angle-right fa-2x"></i></a>		
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- Responsive slider - END -->
+ 
+	
+		<div class="content">
+			<h2><span>Welcome to Brain Waves Company</span></h2>
+			<p>Our foremost concern is promoting the awareness and access to quality health care services by conducting research. </p>
+		</div>
+	<div class="breadcrumb">
+		<h4>Recent Works</h4>
+	</div>
+	
+	<!-- RECENT WORKS -->
+	
+	<div class="container">
+		<div class="row">
+			<div class="boxs">	
+
+			{% for work in works %}	
+
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.8s">
+						<div class="align-center">
+							<h4>{{work.title}}</h4>					
+							<div class="icon">
+								<i class="fa {{work.icon}} fa-3x"></i>
+							</div>
+							<p>
+							 {{work.caption}}
+							</p>
+
+							<!-- <div class="ficon">
+								<a href="" alt="">Learn more</a> 
+							</div> -->
+
+						</div>
+					</div>
+				</div>
+
+			{% endfor %}
+				
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="bg">				
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.8s">
+						<div class="align-center">
+							<h4>Quick Support</h4>					
+							<div class="icon">
+								<i class="fa fa-heart-o fa-3x"></i>
+							</div>
+							<p>
+							 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
+							</p>
+							<div class="ficon">
+								<a href="" alt="">Learn more</a> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.3s">
+						<div class="align-center">
+							<h4>Hight Quality</h4>					
+							<div class="icon">
+								<i class="fa fa-laptop fa-3x"></i>
+							</div>
+							<p>
+							 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
+							</p>
+							<div class="ficon">
+								<a href="" alt="">Learn more</a> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.3s">
+						<div class="align-center">
+							<h4>Easy Customize</h4>					
+							<div class="icon">
+								<i class="fa fa-cloud fa-3x"></i>
+							</div>
+							<p>
+							 Voluptatem accusantium doloremque laudantium sprea totam rem aperiam.
+							</p>
+							<div class="ficon">
+								<a href="" alt="">Learn more</a> 
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+	<div class="breadcrumb" id="about nav">
+		<h4>About Us</h4>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="">				
+				<div class="col-md-7">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.8s">						
+						<img src="{% static 'img/2.png' %}" alt="" class="img-responsive">					
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.3s">
+						<div class="list-group">
+							<a href="#" class="list-group-item active">
+								<h4 class="list-group-item-heading">List group item heading</h4>
+								<p class="list-group-item-text">praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+								</p>	
+							</a>
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading">Modern interface</h4>
+								<p class="list-group-item-text">praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+								</p>								
+							</div>
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading">Modern design</h4>
+								<p class="list-group-item-text">praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+								</p>								
+							</div>
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading">Easy customize</h4>
+								<p class="list-group-item-text">praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+								</p>							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="">							
+				<div class="col-md-4">
+					<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="0.8s">
+						<div class="list-group">
+							<a href="#" class="list-group-item active">
+								<h4 class="list-group-item-heading">List group item heading</h4>
+								<p class="list-group-item-text">praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+								</p>
+							</a>
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading">Modern interface</h4>
+								<p class="list-group-item-text">praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+								</p>								
+							</div>
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading">Easy customize</h4>
+								<p class="list-group-item-text">praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+								</p>								
+							</div>
+							<div class="list-group-item">
+								<h4 class="list-group-item-heading">Modern design</h4>
+								<p class="list-group-item-text">praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias 
+								</p>							
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="image">
+						<div class="wow bounceIn" data-wow-offset="0" data-wow-delay="1.3s">						
+							<img src="{% static 'img/5.jpg' %}" alt="" class="img-responsive">					
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+	<hr>
+	
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
