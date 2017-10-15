@@ -26,7 +26,7 @@
 	<div class="panel-body">
 		<div class="media">
 			<a class="media-left" href="#">
-				<img src="{{training.image.url}}" alt="">
+				<img class="img-responsive" src="{{training.image.url}}" alt="">
 			</a>
 			<br>
 			<div class="media-body">
@@ -34,11 +34,13 @@
 				<p>{{training.caption}}
 				</p>
 				<div class="ficon">
-					<a href="" alt="">Learn more</a> 
+					<a target="_parent" href="trainings/q={{training.id}}">Learn more</a> 
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<hr>
 
 	{% endfor %}
 

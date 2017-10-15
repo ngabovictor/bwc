@@ -18,7 +18,7 @@ def index(request):
 	data = {}
 
 	data['carousel'] = carousel.objects.all()
-	data['works'] = work.objects.all() #.order_by(-date)
+	data['works'] = work.objects.all() .order_by('-date')
 
 	return render(request, 'index.html', data)
 
@@ -35,6 +35,13 @@ def whatwedo(request):
 def ourprograms(request):
 	data = {}
 	data['programs'] = program.objects.all()
+	data['program'] = program.objects.all().first()
+	return render(request, 'our-programs.html', data)
+
+def ourprogram(request, program_id):
+	data = {}
+	data['programs'] = program.objects.all()
+	data['program'] = program.objects.get(pk=program_id)
 	return render(request, 'our-programs.html', data)
 
 
@@ -45,14 +52,42 @@ def contact(request):
 
 
 
-def joinprogram(request):
+def joinprogram(request, program_id):
 	data = {}
+	data['programs'] = program.objects.all()
+	data['choosen'] = program.objects.get(id=program_id)
 	return render(request, 'join-us.html', data)
 
 
+def joinprogram_in(request):
 
-def register(request):
+	if request.method=='POST':
+		names = request.POST['names']
+		phone = request.POST['phone']
+		email = request.POST['email']
+		address = request.POST['address']
+		description = request.POST['description']
+		program_ref = request.POST['program']
+
+		program_id = program.objects.get(id = program_ref)
+
+		joined.objects.create(
+			names = names,
+			phone = phone,
+			email = email,
+			address = address,
+			description = description,
+			program = program_id,
+			date = datetime.today(),)
+	return redirect('/')
+
+
+
+def register(request, training_id):
 	data = {}
+	data['trainings'] = training.objects.all()
+	data['choosen'] = training.objects.get(id=training_id)
+	data['paymentMethods'] = paymentMethod.objects.all()
 	return render(request, 'register.html', data)
 
 
@@ -67,6 +102,15 @@ def publications(request):
 def trainings(request):
 	data = {}
 	data['trainings'] = training.objects.all()
+	data['training'] = training.objects.all().first()
+	return render(request, 'trainings.html', data)
+
+
+
+def ourtraining(request, training_id):
+	data = {}
+	data['trainings'] = training.objects.all()
+	data['training'] = training.objects.get(pk=training_id)
 	return render(request, 'trainings.html', data)
 
 
@@ -113,27 +157,27 @@ def sendmessage(request):
 
 def registering(request):
 	if request.method == 'POST':
-		name = request.POST['name']
+		names = request.POST['names']
 		email = request.POST['email']
 		phone = request.POST.get('phone')
 		paid = request.POST['paid']
 		settraining = request.POST['training']
 		address = request.POST['address']
 		description = request.POST['description']
-
-		traininginfo = training.objects.get(title = settraining)
-		duration = float(traininginfo.price) / float(paid)
+		duration = request.POST['duration']
+		payment = request.POST['payment']
 
 		registered.objects.create(
-			name = name,
+			names = names,
 			email = email,
 			phone = phone,
 			address = address,
-			training = settraining,
+			training = training.objects.get(id=settraining),
 			description = description,
 			duration =duration,
 			date = datetime.today(),
 			paid = paid,
+			payment = paymentMethod.objects.get(id=payment,)
 			)
 	
 		#send_mail(

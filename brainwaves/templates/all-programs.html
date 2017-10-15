@@ -25,7 +25,7 @@
 	<div class="panel-body">
 		<div class="media">
 			<a class="media-left" href="#">
-				<img src="{{program.image.url}}" alt="">
+				<img class="img-responsive" src="{{program.image.url}}" alt="">
 			</a>
 			<br>
 			<div class="media-body">
@@ -33,11 +33,13 @@
 				<p>{{program.caption}}
 				</p>
 				<div class="ficon">
-					<a href="" alt="">Learn more</a> 
+					<a target="_parent" href="our-programs/q={{program.id}}" alt="">Learn more</a> 
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<hr>
 
 	{% endfor %}
 
