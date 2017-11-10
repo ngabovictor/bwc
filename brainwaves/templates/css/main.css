@@ -54,7 +54,17 @@
 {
 	color: rgba(0, 0, 0, 0.7);
 }
+.green{
+	color: #6D9C91;
+}
 
+
+/*FOOTER*/
+
+.footer-icon
+{
+	color: #6D9C91;
+}
 
 
 /*RESPONSIVE*/
